@@ -7,8 +7,7 @@ const {
 } = require('graphql');
 const app = express();
 const PORT = 5000;
-const data = require('./items.json');
-const  db = require('./models');
+
 
 const router = require('express').Router();
 
@@ -25,19 +24,9 @@ const schema = new GraphQLSchema({
   })
 })
 
-const index = (req, res) => {
-  db.Item.find({})
-  .then(foundItems => {
-    res.json({ items: foundItems });
-  })
-  .catch(err => {
-    console.log('error: ', err)
-    res.json({ Error: 'unable to reach data.'})
-  })
-}
-console.log(db.Item)
-const home = router.get('/', index);
-app.use('/items', home);
+
+// const home = router.get('/', index);
+// app.use('/items', home);
 
 app.use('/graphql', graphqlHTTP({
   graphiql: true,
