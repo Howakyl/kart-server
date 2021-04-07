@@ -2,11 +2,12 @@ const db = require('./models');
 const data = require('./items.json');
 
 db.Item.deleteMany({}, (err, deletedItems) => {
+  if (err) console.log(err);
   console.log(`DELETED ITEMS: ${deletedItems}`)
-  db.Item.create(data.items, (err, seededItems) => {
+  db.Item.create(data, (err, seededItems) => {
     if (err) console.log(err);
 
-    console.log(seededItems, "items created successfully!");
+    console.log(data, "items created successfully!");
 
     process.exit();
   });
