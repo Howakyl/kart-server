@@ -5,6 +5,7 @@ const {
   GraphQLObjectType,
   GraphQLString
 } = require('graphql');
+const routes = require('./routes');
 const app = express();
 const PORT = 5000;
 
@@ -25,8 +26,7 @@ const schema = new GraphQLSchema({
 })
 
 
-// const home = router.get('/', index);
-// app.use('/items', home);
+app.use('/items', routes.items);
 
 app.use('/graphql', graphqlHTTP({
   graphiql: true,

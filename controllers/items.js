@@ -1,5 +1,8 @@
 const db = require('../models');
 
+// console.log(items[0].items[1]) THIS IS HOW WE FIND SPECIFIC ITEMS
+
+
 const index = (req, res) => {
   db.Item.find({})
   .then(foundItems => {
