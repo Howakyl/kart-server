@@ -4,9 +4,10 @@ const {
   GraphQLSchema,
   GraphQLObjectType,
   GraphQLString
-} = require('graphql')
+} = require('graphql');
 const app = express();
 const PORT = 5000;
+const items = require('./items.json');
 
 const schema = new GraphQLSchema({
   query: new GraphQLObjectType({
