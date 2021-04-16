@@ -1,6 +1,6 @@
 import { ApolloServer } from 'apollo-server-express';
 import express from 'express';
-// import cors from 'cors';
+import cors from 'cors';
 import mongoose from 'mongoose';
 import { itemResolver } from './resolvers/itemResolver';
 import { kartResolver } from './resolvers/kartResolver';
@@ -9,9 +9,12 @@ import { typeDefs }  from './typeDefs/typeDefs';
 const app = express();
 const PORT = 5000;
 
-// app.use(
-//   cors
-// );
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    credentials: true,
+  })
+);
 
 const startServer = async () => {
   const server = new ApolloServer({
