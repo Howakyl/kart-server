@@ -1,4 +1,4 @@
-const db = require('./models');
+const db = require('./src/models');
 const data = require('./items.json');
 
 db.Item.deleteMany({}, (err, deletedItems) => {

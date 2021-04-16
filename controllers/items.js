@@ -1,4 +1,4 @@
-const db = require('../models');
+const db = require('../src/models');
 
 // console.log(items[0].items[1]) THIS IS HOW WE FIND SPECIFIC ITEMS
 
