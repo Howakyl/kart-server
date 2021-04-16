@@ -5,7 +5,7 @@ const express = require('express');
 //   GraphQLObjectType,
 //   GraphQLString
 // } = require('graphql');
-const routes = require('./routes');
+const routes = require('../routes');
 const app = express();
 const PORT = 5000;
 
