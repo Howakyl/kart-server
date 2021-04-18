@@ -2,7 +2,8 @@ import { Item } from '../models/Item';
 
 export const itemResolver = {
   Query: {
-    hello: () => 'hello, world!'
+    hello: () => 'hello, world!',
+    items: () => Item.find()
   },
 
   Mutation: {
