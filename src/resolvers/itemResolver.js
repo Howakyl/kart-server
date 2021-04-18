@@ -12,5 +12,10 @@ export const itemResolver = {
       await newItem.save();
       return newItem;
     },
+
+    deleteItem: async (_, {id}) => {
+      await Item.findByIdAndDelete(id);
+      return true;
+    },
   }
 }
