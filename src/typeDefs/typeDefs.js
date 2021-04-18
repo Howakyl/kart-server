@@ -11,8 +11,13 @@ export const typeDefs = gql`
     name: String!
   }
 
+  input updateItemInput {
+    name: String
+  }
+
   type Mutation {
     createItem (name: String): Item!
     deleteItem(id: ID): Boolean
+    updateItem (id: ID!, input: updateItemInput!): Item!
   }
 `;
