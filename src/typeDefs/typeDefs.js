@@ -13,5 +13,6 @@ export const typeDefs = gql`
 
   type Mutation {
     createItem (name: String): Item!
+    deleteItem(id: ID): Boolean
   }
 `;
